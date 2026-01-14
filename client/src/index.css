@@ -1,0 +1,101 @@
+@import "tailwindcss";
+@import 'remixicon/fonts/remixicon.css';
+*{
+  box-sizing: border-box;
+  font-family:  "Rubik", sans-serif;
+}
+html,body{
+  width: 100%;
+  height: 100vh;
+  scroll-behavior: smooth;
+  background-color: #fcf4ee
+}
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  /* border: 2px solid black; */
+  /* background-color: #fbbf24; or your preferred background */
+}
+
+
+.logos::before,
+.logos::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 60px;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.logos::before {
+  left: 0;
+  background: linear-gradient(to right, #fbbf24, rgba(251, 191, 36, 0));
+}
+
+
+
+.logos::after {
+  right: 0;
+  background: linear-gradient(to left, #fbbf24, rgba(251, 191, 36, 0));
+}
+
+.logos-track {
+  display: flex;
+  width: fit-content;
+  animation: scroll 15s linear infinite;
+}
+
+.logos-track img {
+  height: 64px;
+  margin: 0 40px;
+  object-fit: contain;
+}
+.custom-prev,
+.custom-next  {
+  background-color: #0b2a21;
+  color: white !important ;
+  padding: 7px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border: 2px solid white;
+    border-radius: 100px;
+}
+
+.custom-prev:hover,
+.custom-next:hover {
+  background-color: #0b2a21;
+  color: white !important ;
+  transform: scale(1.1);
+  transition: all .2s ease-in-out;
+  border:2px solid white;
+  border-radius: 100px;
+}
+.gallery-image{
+    width: 100%;
+    display: block;
+    padding: 5px 0px;
+    border-radius: 20px;
+    transition: transform 0.2s;
+}
+
+.gallery-image:hover {
+    filter: opacity(.9);
+    transform: scale(1.01);
+}
+.lg-react-element {
+   column-count: 3;
+  column-gap: 10px;
+}
